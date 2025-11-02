@@ -1,40 +1,45 @@
-//complete this code
 class Rectangle {
-	constructor(width, height){
-	this.Widht = widht,
-	this.Height = height
-	}
-	get Width(){
-		return this.Width
-	}
-	get Height(){
-		return this.Height
-	}
-	getArea(){
-		return this.Width* this.Height
-	}
+  constructor(width, height) {
+    this._width = width;
+    this._height = height;
+  }
+
+  get width() {
+    return this._width;
+  }
+
+  get height() {
+    return this._height;
+  }
+
+  getArea() {
+    return this._width * this._height;
+  }
 }
-const rectangle = new Rectangle(5,10)
-console.log(rectangle.getArea())
 
 class Square extends Rectangle {
-	
-	constructor(side)
-	super(Side, Side)
-	this.side = side
+  constructor(side) {
+    // must call super() before using "this"
+    super(side, side);
+  }
 
-	getArea(){
-		return this.Side*this.Side
-	}
-	getParimeter(){
-		return this.Side*4
-	}
+  getPerimeter() {
+    return this._width * 4;
+  }
 }
-const square = new Square(7)
-console.log(square.getArea())
-console.log(square.getParimeter())
 
+// Example usage (for manual check)
+const rectangle = new Rectangle(5, 10);
+console.log(rectangle.width); // 5
+console.log(rectangle.height); // 10
+console.log(rectangle.getArea()); // 50
 
-// Do not change the code below this line
+const square = new Square(7);
+console.log(square.width); // 7
+console.log(square.height); // 7
+console.log(square.getArea()); // 49
+console.log(square.getPerimeter()); // 28
+
+// Do not change this part
 window.Rectangle = Rectangle;
 window.Square = Square;
